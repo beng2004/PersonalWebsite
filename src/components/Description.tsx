@@ -15,6 +15,7 @@ interface DescriptionProps {
 const Description: React.FC<DescriptionProps> = ({ experience }) => {
   const { date, title, subtitle, description, skillsUsed } = experience;
 
+
   return (
     <div className="mb-8  flex justify-center items-center h-full text-center">
       <div className=" w-full px-4"> {/* Adjusted width using max-w-4xl */}
