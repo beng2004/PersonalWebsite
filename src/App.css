@@ -1,0 +1,17 @@
+  .timeline-element .vertical-timeline-element-content:hover .timeline-content {
+    transition: transform 0.2s;
+    transform: scale(1.1); /* Slightly increase the size */
+    color: transparent; /* Make text transparent */
+    background: linear-gradient(180deg, #e3dde3, #ca6a93); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+  }
+  
+  
+  .logo .fa:hover {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.3); /* Slightly increase the size */
+    color: blueviolet;
+  }
+  
+ 
