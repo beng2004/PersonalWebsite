@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa"
 import { FaSchool } from "react-icons/fa" 
 import { FaGoogle} from "react-icons/fa"
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     return (
         <nav className="xl:mb-20 flex items-center justify-between py-6"> 
             <div className="logo flex flex-shrink-0 items-center">

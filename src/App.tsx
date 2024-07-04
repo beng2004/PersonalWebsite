@@ -2,6 +2,8 @@ import React from "react"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
+import { motion } from 'framer-motion';
+import Projects from "./components/Projects";
 
 
 const App = () => {
@@ -14,7 +16,8 @@ const App = () => {
       <div className="container mx-auto px-2">
         <Navbar/>
         <Hero/>
-        <About/>
+        <About />
+        <Projects />
       </div>
     </div>
   )
