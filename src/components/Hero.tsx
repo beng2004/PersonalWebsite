@@ -1,7 +1,7 @@
 import { HERO_CONTENT } from "../constants"
 import profilePic from "../assets/hero6.png"
 
-const Hero = () => {
+const Hero: React.FC = () => {
     return (
         <div className="border-b border-neutral-900 pb-4 lg:mb-35"> 
             <div className=" flex flex-wrap"> 
