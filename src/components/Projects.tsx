@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import PortfolioSplash from '../assets/projects/PortfolioSplash.png'
 import TuneTapSplash from '../assets/projects/TuneTapSplash.png'
 import GoatSplash from '../assets/projects/GoatSplash.png'
-// import ASLSplash from '../assets/projects/ASLSplash.jpeg'
+import AutoSenseSplash from '../assets/projects/AutoSenseSplash.jpg';
+import ASLSplash from '../assets/projects/ASLSplashjpg.jpg'
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 interface Project {
@@ -48,7 +49,7 @@ const projects: Project[] = [
       title: "AutoSense",
       description: "A cutting-edge real-time car body type and classification tool. This project showcases advanced computer vision and deep learning techniques for accurate vehicle recognition.",
       technologies: ["Python", "PyTorch", "OpenCV", "YOLO", "CNN", "Jupyter Notebook", "NumPy", "Pandas", "Matplotlib", "TensorFlow", "Transfer Learning"],
-      imageUrl: "/path-to-image/autosense.jpg",
+      imageUrl: AutoSenseSplash,
       githubUrl: "https://github.com/yourusername/autosense"
     },
     {
@@ -64,7 +65,7 @@ const projects: Project[] = [
       title: "Slide Generator",
       description: "An AI-powered presentation creator that automates slide generation using natural language processing and image recognition. This hackathon project showcases integration of multiple APIs and efficient data processing.",
       technologies: ["Python", "Flask", "GPT-3", "Google Cloud Vision API", "HTML", "JavaScript", "JSON", "Selenium Web Scraping", "Natural Language Processing", "RESTful API"],
-      imageUrl: "/path-to-image/slide-generator.jpg",
+      imageUrl: ASLSplash,
       githubUrl: "https://github.com/yourusername/slide-generator",
       liveUrl: "https://devpost.com/software/slide-generator"
     },
@@ -73,7 +74,7 @@ const projects: Project[] = [
       title: "SignWaver",
       description: "An innovative accessibility solution that enables computer control through hand gestures and voice commands. This project demonstrates advanced computer vision, machine learning, and natural language processing skills.",
       technologies: ["Python", "Google MediaPipe", "Google Cloud Services", "Gemini AI", "Speech Recognition", "Computer Vision", "Natural Language Processing", "Machine Learning", "Voice Command Processing", "Gesture Recognition", "System Integration", "Accessibility Design"],
-      imageUrl: "/path-to-image/signwaver.jpg",
+      imageUrl: ASLSplash,
       githubUrl: "https://github.com/yourusername/signwaver",
       liveUrl: "https://devpost.com/software/signwaver"
     }
@@ -155,7 +156,7 @@ const projects: Project[] = [
   const Projects: React.FC = () => {
     return (
       <ParallaxProvider>
-        <div className="py-24">
+        <div className="p-24">
           <div className="container mx-auto px-6">
             <h2 className="text-6xl font-bold text-center mb-24 text-white">
               My <span className="text-blue-500">Projects</span>
