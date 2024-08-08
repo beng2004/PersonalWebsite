@@ -1,9 +1,16 @@
 import { HERO_CONTENT } from "../constants"
 import profilePic from "../assets/hero6.png"
+import { motion } from "framer-motion"
 
 const Hero: React.FC = () => {
     return (
-        <div className="min-h-fit flex items-start justify-center px-4 sm:px-6 md:px-8 pt-20 lg:pt-32">
+    <motion.div 
+        className="min-h-fit"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+       >
+        <div className=" flex items-start justify-center px-4 sm:px-6 md:px-8 pt-20 lg:pt-32">
             <div className="w-full max-w-8xl">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
@@ -29,6 +36,7 @@ const Hero: React.FC = () => {
                 </div>
             </div>
         </div>
+        </motion.div>
     )
 }
 

@@ -157,7 +157,7 @@ const projects: Project[] = [
     return (
       <ParallaxProvider>
         <div className="p-24">
-          <div className="container mx-auto px-6">
+          <div className="container opacity-90 mx-auto px-6">
             <h2 className="text-6xl font-bold text-center mb-24 text-white">
               My <span className="text-purple-500">Projects</span>
             </h2>

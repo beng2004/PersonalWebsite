@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center justify-between py-8 px-12">
             <div className="logo flex flex-shrink-0 items-center">
-                <img className="mx-2 w-14 antialiased" src={logo} alt="logo"/>
+                <img className="mx-2 w-16 antialiased" src={logo} alt="logo"/>
             </div>
             <div className="flex-grow flex justify-center">
                 <div className="text-lg flex space-x-20">

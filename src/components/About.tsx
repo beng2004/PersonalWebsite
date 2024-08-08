@@ -12,9 +12,11 @@ const About: React.FC = () => {
 //TODO color of pagination must be brighter need maybe add side arrows
   return (
     <div className="border-neutral-900 pb-4 lg: px-20">
-      <h2 className="text-6xl font-bold text-center mb-24 text-white">
-        About <span className="text-purple-500">Me</span>
-      </h2>
+      <div className="container mx-auto pt-24 opacity-90">
+        <h2 className="text-6xl font-bold text-center mb-24 text-white">
+          About <span className="text-purple-500">Me</span>
+        </h2>
+      </div>
       <div className="flex flex-wrap">
         <div className="w-full xl:w-1/2 lg:p-2">
           <h2 className="mb-20 text-center bg-gradient-to-r from-blue-300 via-slate-500 to-purple-500
