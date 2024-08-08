@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react';
 import Timeline from './Timeline';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
@@ -7,16 +6,14 @@ import Description from './Description';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-import { motion } from 'framer-motion';
 
 
 const About: React.FC = () => {
 //TODO color of pagination must be brighter need maybe add side arrows
   return (
     <div className="border-neutral-900 pb-4 lg: px-20">
-      <h2 className="my-20 text-center text-4xl">
-        About
-        <span className="text-neutral-500"> Me</span>
+      <h2 className="text-6xl font-bold text-center mb-24 text-white">
+        About <span className="text-purple-500">Me</span>
       </h2>
       <div className="flex flex-wrap">
         <div className="w-full xl:w-1/2 lg:p-2">
