@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Experience {
-  date: string;
+  date?: string;
   title: string;
   subtitle: string;
   description: string;
@@ -13,7 +13,7 @@ interface DescriptionProps {
 }
 
 const Description: React.FC<DescriptionProps> = ({ experience }) => {
-  const { date, title, subtitle, description, skillsUsed } = experience;
+  const { title, subtitle, description, skillsUsed } = experience;
 
 
   return (
