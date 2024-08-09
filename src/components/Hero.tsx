@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
        >
-        <div className=" flex items-start justify-center px-4 sm:px-6 md:px-8 pt-20 lg:pt-32">
+        <div className="flex items-start justify-center px-4 sm:px-6 md:px-8 lg:pt-22 xl:pt-30 pt-24 ">
             <div className="w-full max-w-8xl">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
                     <div className="w-full lg:w-1/2 text-center lg:text-left">

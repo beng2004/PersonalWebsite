@@ -1,64 +1,41 @@
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import '../App.css'; // Import the CSS file
+import React from 'react';
+import { motion } from 'framer-motion';
+
 interface Experience {
   date: string;
   title: string;
-  subtitle: string;
   description: string;
+  skillsUsed: string[];
 }
 
+interface TimelineProps {
+  experiences: Experience[];
+  setSelectedExperience: (experience: Experience) => any;
+}
 
-const Timeline: React.FC = () => {
-  const experiences: Experience[] = [
-    {
-      date: 'Jan 2023 - Current',
-      title: 'TCNJ',
-      subtitle: 'Research - Machine Learning & Computer Vision',
-      description: 'Click for more details',
-    },
-    {
-      date: 'May 2023 - Jan 2024',
-      title: 'BAE Systems',
-      subtitle: 'Internship - SWE & Data Analytics',
-      description: 'Click for more details',
-    },
-    
-    {
-      date: 'Sept 2023 - Current',
-      title: 'TCNJ',
-      subtitle: 'Position as computer Science peer mentor/tutor',
-      description: 'Click for more details',
-    },
-    {
-      date: 'May 2024 - Current',
-      title: 'Prudential Financial',
-      subtitle: 'Internship - Software Engineering',
-      description: 'Click for more details',
-    },
-  ];
-
+const Timeline: React.FC<TimelineProps> = ({ experiences, setSelectedExperience }) => {
   return (
-    <VerticalTimeline>
+    <div className="w-full max-w-4xl mx-auto">
       {experiences.map((experience, index) => (
-        <VerticalTimelineElement
+        <motion.div 
           key={index}
-          className='timeline-element lg:w-full'
-          contentStyle={{ textWrap: 'pretty', background: '#61697e', textAlign: 'center', padding: '20px', borderRadius: '8px', border: '2px solid #5f686b', boxShadow: '0 0 15px 2px #000', maxWidth: '600px', transition: 'transform 0.3s ease-in-out', }}
-          contentArrowStyle={{ margin: '2px', borderRight: '11px solid  #ca6a93',  opacity: '.5'}}
-          date={experience.date}
-          iconStyle={{ background: '#ca6a93', color: '#fff', scale: '.8', boxShadow: '0 0 8px 4px #000', }}
-          icon={<i className="fas fa-briefcase" />}
-          dateClassName='mx-7 text-left '
+          className="flex flex-col md:flex-row mb-8 cursor-pointer"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+          onClick={() => setSelectedExperience(experience)}
         >
-          <div className="timeline-content">
-            <h3 className="text-2xl font-bold md:text-lg">{experience.title}</h3>
-            <h4 className="text-lg md:text-sm">{experience.subtitle}</h4>
-            <p className='md:text-sm'>{experience.description}</p>
+          <div className="flex-none w-24 md:w-48 pr-4 pt-1 text-right">
+            <span className="text-sm font-semibold text-blue-400">{experience.date}</span>
           </div>
-        </VerticalTimelineElement>
+          <div className="flex-grow pl-4 md:pl-8 relative before:absolute before:left-0 before:top-2 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-blue-400 before:via-purple-500 before:to-blue-300">
+            <div className="absolute left-0 top-2 w-3 h-3 rounded-full bg-blue-500 transform -translate-x-1/2"></div>
+            <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-300 bg-clip-text text-transparent">{experience.title}</h3>
+            <p className="text-gray-300">{experience.description}</p>
+          </div>
+        </motion.div>
       ))}
-    </VerticalTimeline>
+    </div>
   );
 };
 
