@@ -36,8 +36,7 @@ const About: React.FC = () => {
         {/* Row 2: Timeline and Experience Details */}
         <div className="w-full flex flex-col xl:flex-row mt-12">
           <div className="w-full xl:w-1/2 p-4">
-            {/*@ts-expect-error type mismatch its ok though */}
-            <Timeline experiences={experiences} setSelectedExperience={setSelectedExperience} />
+            <Timeline experiences={experiences} setSelectedExperience={setSelectedExperience} selectedExperience={selectedExperience} />
           </div>
           <div className="w-full xl:w-1/2 p-4">
             <AnimatePresence mode="wait">

@@ -3,35 +3,35 @@
     "date": "June 2024 - Aug 2024",
     "title": "Prudential Financial",
     "subtitle": "Internship - Software Engineering",
-    "description": "Engaged in software engineering projects at Prudential Financial with a focus on microservices and APIs. Developed frontend components using React and TypeScript, ensuring responsive interfaces with Tailwind CSS. Implemented OAuth for authentication and utilized MSAL (Microsoft Authentication Library) for secure user authentication and authorization. Developed microservices using Node.js and Koa, and utilized FastAPI for building server-side applications. Implemented API security measures to safeguard data transmission and ensure compliance with security standards.",
-    "skillsUsed": ["JavaScript", "React", "TypeScript", "Tailwind CSS", "Node.js", "Koa", "FastAPI", "Microservices", "API Integration", "OAuth", "MSAL", "API Security"]
+    "description": "Led the development and deployment of API security libraries for enterprise-wide use, utilizing Node.js and React to implement robust OAuth 2.0 workflows. Architected a TypeScript and Node.js library for API role management, now a core component in company-wide templates. Engineered Backend-for-Frontend (BFF) services to optimize data flow between front-end and back-end systems, enhancing performance. Developed a vault secrets management and token verification library for internal authentication, bolstering security.",
+    "skillsUsed": ["JavaScript", "TypeScript", "Node.js", "React", "Koa", "Tailwind CSS", "OAuth 2.0 Workflows", "API Security", "Backend-for-Frontend (BFF)", "Microservices", "API Integration"]
   },
   {
     "date": "Sept 2023 - Current",
     "title": "TCNJ",
     "subtitle": "Computer Science Peer Mentor",
-    "description": "Provided guidance and support to students in computer science courses as a Peer Mentor at TCNJ. Assisted in labs, explained complex algorithms, and promoted effective programming practices. Collaborated closely with faculty to ensure students received comprehensive guidance and support in their coursework.",
-    "skillsUsed": ["Java", "C++", "Teaching", "Mentoring"]
+    "description": "Provided mentorship and guidance to computer science students, teaching foundational and complex programming concepts in Java. Promoted best practices in software development and assisted students with lab exercises, fostering a collaborative learning environment.",
+    "skillsUsed": ["Java", "C++", "Teaching", "Mentoring", "Data Structures", "Algorithms"]
   },
   {
     "date": "May 2023 - Jan 2024",
     "title": "BAE Systems",
     "subtitle": "Internship - SWE & Data Analytics",
-    "description": "Contributed to software engineering and data analytics projects at BAE Systems in Mount Laurel, NJ. Developed a data analytics tool using Java and SQL for real-time image detection and classification. Contributed to the model-based systems engineering team by developing Java algorithms and creating plugins for CAMEO. Implemented a document scraping model in Python utilizing BFS graph algorithms.",
-    "skillsUsed": ["Java", "SQL", "Data Analysis", "Software Engineering"]
+    "description": "Spearheaded the development of a real-time image detection and classification tool using PyTorch, enabling advanced analytics in defense applications. Designed and implemented Java algorithms to convert defense systems into system-based models. Developed and integrated CAMEO plug-ins for internal use, and researched PDF to CSV conversion techniques using deep learning.",
+    "skillsUsed": ["Java", "Python", "PyTorch", "CAMEO", "Data Analytics", "Model-Based Systems Engineering", "Algorithms"]
   },
   {
     "date": "Jan 2023 - Current",
     "title": "TCNJ",
     "subtitle": "Research - Machine Learning & Computer Vision",
-    "description": "Engaged in research at The College of New Jersey (TCNJ) focusing on Machine Learning and Computer Vision under the guidance of Dr. Andrea Salgian. Developed algorithms using Python, TensorFlow, and OpenCV for American Sign Language (ASL) classification and detection. Presented findings at ACM's SIGCSE Technical Symposium, showcasing our approach to over 1000 attendees.",
-    "skillsUsed": ["Python", "TensorFlow", "OpenCV", "Research"]
+    "description": "Conducted research in ASL classification using machine learning and computer vision, implementing deep learning algorithms with PyTorch and Google MediaPipe. Published research findings at ACM’s SIGCSE Technical Symposium and presented them to over 1000 attendees. Currently focused on classifying dynamic ASL signs and collecting large-scale data.",
+    "skillsUsed": ["Python", "PyTorch", "OpenCV", "TensorFlow", "Machine Learning", "Computer Vision", "Research"]
   },
   {
     "date": "Sept 2022 - Current",
-    "title": "The College Of New Jersey (TCNJ)",
+    "title": "The College of New Jersey (TCNJ)",
     "subtitle": "B.S. Computer Science - Specialization in Data Science",
-    "description": "Pursuing a Bachelor of Science in Computer Science with a specialization in Data Science at The College of New Jersey (TCNJ). Maintaining a GPA of 3.98/4.0, consistently recognized on the Dean's List from 2022 to present.",
-    "skillsUsed": ["Data Science", "Academic Excellence"]
+    "description": "Pursuing a Bachelor of Science in Computer Science with a specialization in Data Science at TCNJ. Maintaining a GPA of 3.98/4.0, consistently recognized on the Dean's List from 2022 to present.",
+    "skillsUsed": ["Data Science", "Academic Excellence", "GPA 3.98/4.0", "Dean's List"]
   }
 ]
