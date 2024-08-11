@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Timeline from './Timeline';
 import experiences from '../assets/data/experiences.json';
 import pfp from '../assets/pfp.jpg';
@@ -6,6 +6,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const About: React.FC = () => {
   const [selectedExperience, setSelectedExperience] = useState(experiences[0]);
+  const descriptionRef = useRef<HTMLDivElement>(null);
+
+  const handleExperienceClick = (experience: typeof selectedExperience) => {
+    setSelectedExperience(experience);
+    if (descriptionRef.current) {
+      setTimeout(() => {
+        descriptionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100); // Short delay to ensure the new content is rendered
+    }
+  };
+
+  useEffect(() => {
+    // Scroll to description on initial load for mobile devices
+    if (window.innerWidth < 1280 && descriptionRef.current) { // 1280px is the 'xl' breakpoint in Tailwind
+      descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
 
   return (
     <div className="container mx-auto border-neutral-900 pt-4 pb-24 px-4 lg:px-20">
@@ -36,9 +53,13 @@ const About: React.FC = () => {
         {/* Row 2: Timeline and Experience Details */}
         <div className="w-full flex flex-col xl:flex-row mt-12">
           <div className="w-full xl:w-1/2 p-4">
-            <Timeline experiences={experiences} setSelectedExperience={setSelectedExperience} selectedExperience={selectedExperience} />
+            <Timeline 
+              experiences={experiences} 
+              setSelectedExperience={handleExperienceClick} 
+              selectedExperience={selectedExperience} 
+            />
           </div>
-          <div className="w-full xl:w-1/2 p-4">
+          <div className="w-full xl:w-1/2 p-4" ref={descriptionRef}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedExperience.title}
