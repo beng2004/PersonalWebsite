@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
             </div>
             
             {/* Mobile Sidebar */}
-            <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden`}>
+            <div className={`fixed top-0 right-0 h-full w-64 bg-slate-700 shadow-lg transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden`}>
                 <div className="flex justify-end p-4">
                     <button onClick={toggleMobileMenu} className="text-3xl">
                         <FaTimes />

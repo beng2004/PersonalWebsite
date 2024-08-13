@@ -81,7 +81,7 @@ const projects: Project[] = [
   ];
 
   const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
   
     return (
       <motion.div 
@@ -89,8 +89,7 @@ const projects: Project[] = [
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onClick={() => setIsExpanded(!isExpanded)}
         style={{ aspectRatio: '1 / 1' }}
       >
         <Parallax speed={-5} className="h-full overflow-hidden">
@@ -100,77 +99,54 @@ const projects: Project[] = [
           className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent transition-opacity duration-300"
           style={{
             clipPath: 'polygon(0 40%, 100% 0, 100% 100%, 0% 100%)',
-            opacity: isHovered ? 0.9 : 0.7, // Increase opacity on hover
+            opacity: isExpanded ? 0.9 : 0.7,
           }}
         />
         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-        <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-10">
-          <h3 className="text-3xl font-bold mb-4 drop-shadow-lg">{project.title}</h3>
+        <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white z-10">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 drop-shadow-lg">{project.title}</h3>
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0, height: isHovered ? 'auto' : 0 }}
+            animate={{ opacity: isExpanded ? 1 : 0, height: isExpanded ? '70%' : 0 }}
             transition={{ duration: 0.3 }}
+            className="overflow-y-auto custom-scrollbar"
           >
-            <p className="mb-6 text-gray-100 text-lg drop-shadow-md">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.technologies.slice(0, 5).map((tech, index) => (
-                <span key={index} className="bg-blue-600/70 text-white px-3 py-1 rounded-full text-sm shadow-md">
-                  {tech}
-                </span>
-              ))}
-              {project.technologies.length > 5 && (
-                <span className="bg-blue-600/70 text-white px-3 py-1 rounded-full text-sm shadow-md">
-                  +{project.technologies.length - 5} more
-                </span>
-              )}
-            </div>
-            <div className="flex space-x-4">
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-full transition-colors duration-300 shadow-md"
-              >
-                GitHub
-              </a>
-              {project.liveUrl && (
+            <div className="space-y-4">
+              <p className="text-gray-100 text-sm sm:text-base drop-shadow-md">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="bg-blue-600/70 text-white px-2 py-1 rounded-full text-xs sm:text-sm shadow-md">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex space-x-2 sm:space-x-4">
                 <a 
-                  href={project.liveUrl} 
+                  href={project.githubUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full transition-colors duration-300 shadow-md"
+                  className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-full transition-colors duration-300 shadow-md text-sm sm:text-base"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  Live Demo
+                  GitHub
                 </a>
-              )}
+                {project.liveUrl && (
+                  <a 
+                    href={project.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-full transition-colors duration-300 shadow-md text-sm sm:text-base"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
       </motion.div>
     );
   };
-  
-  
-  const Projects: React.FC = () => {
-    return (
-      <ParallaxProvider>
-        <div className="p-24">
-          <div className="container opacity-90 mx-auto px-6">
-            <h2 className="text-6xl font-bold text-center mb-24 text-white">
-              My <span className="text-purple-500">Projects</span>
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-              {projects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </ParallaxProvider>
-    );
-  };
-  
-  export default Projects;
-  
