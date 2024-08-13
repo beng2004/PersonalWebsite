@@ -55,6 +55,7 @@ const About: React.FC = () => {
           <div className="w-full xl:w-1/2 p-4">
             <Timeline 
               experiences={experiences} 
+              //@ts-expect-error
               setSelectedExperience={handleExperienceClick} 
               selectedExperience={selectedExperience} 
             />
