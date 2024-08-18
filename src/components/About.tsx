@@ -16,13 +16,13 @@ const About: React.FC = () => {
       }, 100); // Short delay to ensure the new content is rendered
     }
   };
-
-  useEffect(() => {
-    // Scroll to description on initial load for mobile devices
-    if (window.innerWidth < 1280 && descriptionRef.current) { // 1280px is the 'xl' breakpoint in Tailwind
-      descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, []);
+  
+  // useEffect(() => {
+  //   // Scroll to description on initial load for mobile devices
+  //   if (window.innerWidth < 1280 && descriptionRef.current) { 
+  //       descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   }
+  // }, []);
 
   return (
     <div className="container mx-auto border-neutral-900 pt-4 pb-24 px-4 lg:px-20">

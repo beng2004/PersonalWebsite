@@ -50,10 +50,15 @@ const Navbar: React.FC = () => {
             
             {/* Desktop Social Icons */}
             <div className="hidden md:flex items-center justify-center gap-4 text-3xl">
-                <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                <FaGoogle className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                <a href="https://www.linkedin.com/in/benjaminguerrieri/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                </a>
+                <a href="https://www.github.com/beng2004" target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                </a>
+                <a href="https://www.tcnj.edu" target="_blank" rel="noopener noreferrer">
+                    <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                </a>
             </div>
             
             {/* Mobile Menu Button */}
@@ -86,10 +91,15 @@ const Navbar: React.FC = () => {
                         </Link>
                     ))}
                     <div className="flex space-x-4 text-3xl mt-8">
-                        <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                        <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                        <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                        <FaGoogle className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                        <a href="https://www.linkedin.com/in/benjaminguerrieri/" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                        </a>
+                        <a href="https://www.github.com/beng2004" target="_blank" rel="noopener noreferrer">
+                            <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                        </a>
+                        <a href="https://www.tcnj.edu" target="_blank" rel="noopener noreferrer">
+                            <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                        </a>
                     </div>
                 </div>
             </div>

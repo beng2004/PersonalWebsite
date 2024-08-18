@@ -1,7 +1,4 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+
 
 export const HERO_CONTENT = `I am Benjamin Guerrieri, currently pursuing a degree in Computer Science at The College of New Jersey. My experiences have helped me develop a diverse skill set, from AI and machine learning to crafting fullstack web applications with technologies like React, Node.js, and TypeScript. I am passionate about using technology to innovate and solve complex challenges, whether in AI engineering, full-stack development, or beyond. My goal is to contribute meaningfully to the tech industry while continuously learning.`;
 
