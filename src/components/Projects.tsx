@@ -5,7 +5,7 @@ import TuneTapSplash from '../assets/projects/TuneTapSplash.png'
 import GoatSplash from '../assets/projects/GoatSplash.png'
 import AutoSenseSplash from '../assets/projects/AutoSenseSplash.jpg';
 import ASLSplash from '../assets/projects/ASLSplashjpg.jpg'
-import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import {  ParallaxProvider } from 'react-scroll-parallax';
 
 interface Project {
   id: number;

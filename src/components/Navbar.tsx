@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from "../assets/smallLogo.png";
-import { FaLinkedin, FaGithub, FaSchool, FaGoogle, FaBars, FaTimes } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaSchool, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
@@ -26,7 +26,9 @@ const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center justify-between pt-8 px-4 md:px-12">
             <div className="logo flex flex-shrink-0 items-center">
-                <img className="mx-2 w-16 antialiased" src={logo} alt="logo"/>
+                <Link to={'/'}>
+                    <img className="mx-2 w-16 antialiased" src={logo} alt="logo"/>
+                </Link>
             </div>
             
             {/* Desktop Menu */}
@@ -39,7 +41,7 @@ const Navbar: React.FC = () => {
                             className={`transition duration-300 ${
                                 currentPage === item.path
                                     ? 'text-purple-500 font-semibold text-2xl'
-                                    : 'hover:text-purple-500 opacity-40 text-xl'
+                                    : 'hover:text-purple-500 opacity-70 text-xl'
                             }`}
                         >
                             {item.label}

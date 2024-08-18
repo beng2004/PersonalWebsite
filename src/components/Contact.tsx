@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaSchool, FaGoogle } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaSchool } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
@@ -86,10 +86,10 @@ const Contact: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-300 via-slate-500 to-purple-500 bg-clip-text text-transparent">
+          <h3 className="text-3xl sm:text-xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-300 via-slate-500 to-purple-500 bg-clip-text text-transparent">
             Let's Connect
           </h3>
-          <p className="text-gray-300 text-lg mb-6 max-w-md sm:justify-center text-center">
+          <p className="text-gray-300 text-2xl mb-6 max-w-md sm:justify-center text-center">
             Feel free to reach out for collaborations, opportunities, or just to say hello. I'm always excited to connect with fellow developers and tech enthusiasts!
           </p>
           <div className="visible xl:invisible flex space-x-6 text-4xl">

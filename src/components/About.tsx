@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Timeline from './Timeline';
 import experiences from '../assets/data/experiences.json';
 import pfp from '../assets/pfp.jpg';
@@ -16,7 +16,7 @@ const About: React.FC = () => {
       }, 100); // Short delay to ensure the new content is rendered
     }
   };
-  
+
   // useEffect(() => {
   //   // Scroll to description on initial load for mobile devices
   //   if (window.innerWidth < 1280 && descriptionRef.current) { 
@@ -55,7 +55,7 @@ const About: React.FC = () => {
           <div className="w-full xl:w-1/2 p-4">
             <Timeline 
               experiences={experiences} 
-              //@ts-expect-error
+              //@ts-expect-error needed
               setSelectedExperience={handleExperienceClick} 
               selectedExperience={selectedExperience} 
             />
