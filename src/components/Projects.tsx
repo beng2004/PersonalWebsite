@@ -40,7 +40,7 @@ const projects: Project[] = [
       description: "A real-time car body type and classification tool. This project showcases computer vision and deep learning techniques for accurate vehicle recognition.",
       technologies: ["Python", "PyTorch", "OpenCV", "YOLO", "CNN", "Jupyter Notebook", "NumPy", "Pandas", "Matplotlib", "TensorFlow", "Transfer Learning"],
       imageUrl: AutoSenseSplash,
-      githubUrl: "https://github.com/yourusername/autosense"
+      githubUrl: "https://github.com/beng2004/AutoSense"
     },
     {
       id: 2,
