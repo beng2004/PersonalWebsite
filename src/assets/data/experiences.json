@@ -3,7 +3,7 @@
     "date": "June 2024 - Aug 2024",
     "title": "Prudential Financial",
     "subtitle": "Internship - Software Engineering",
-    "description": "Led the development and deployment of API security libraries for enterprise-wide use, utilizing Node.js and React to implement robust OAuth 2.0 workflows. Architected a TypeScript and Node.js library for API role management, now a core component in company-wide templates. Engineered Backend-for-Frontend (BFF) services to optimize data flow between front-end and back-end systems, enhancing performance. Developed a vault secrets management and token verification library for internal authentication, bolstering security.",
+    "description": "Helped with the development and deployment of API security libraries for enterprise-wide use, utilizing Node.js and React to implement OAuth 2.0 workflows. Architected a TypeScript and Node.js library for API role management, now a core component in company-wide templates. Engineered Backend-for-Frontend (BFF) services to optimize data flow between front-end and back-end systems, enhancing performance. Developed a vault secrets management and token verification library for internal authentication, bolstering security.",
     "skillsUsed": ["JavaScript", "TypeScript", "Node.js", "React", "Koa", "Tailwind CSS", "OAuth 2.0 Workflows", "API Security", "Backend-for-Frontend (BFF)", "Microservices", "API Integration"]
   },
   {
@@ -17,7 +17,7 @@
     "date": "May 2023 - Jan 2024",
     "title": "BAE Systems",
     "subtitle": "Internship - SWE & Data Analytics",
-    "description": "Spearheaded the development of a real-time image detection and classification tool using PyTorch, enabling advanced analytics in defense applications. Designed and implemented Java algorithms to convert defense systems into system-based models. Developed and integrated CAMEO plug-ins for internal use, and researched PDF to CSV conversion techniques using deep learning.",
+    "description": "Developed a real-time image detection and classification tool using PyTorch, enabling advanced real time analytics. Designed and implemented Java algorithms to convert defense systems into system-based models. Developed and integrated CAMEO plug-ins for internal use, and researched PDF to CSV conversion techniques using deep learning.",
     "skillsUsed": ["Java", "Python", "PyTorch", "CAMEO", "Data Analytics", "Model-Based Systems Engineering", "Algorithms"]
   },
   {
@@ -31,7 +31,7 @@
     "date": "Sept 2022 - Current",
     "title": "The College of New Jersey (TCNJ)",
     "subtitle": "B.S. Computer Science - Specialization in Data Science",
-    "description": "Pursuing a Bachelor of Science in Computer Science with a specialization in Data Science at TCNJ. Maintaining a GPA of 3.98/4.0, consistently recognized on the Dean's List from 2022 to present.",
-    "skillsUsed": ["Data Science", "Academic Excellence", "GPA 3.98/4.0", "Dean's List"]
+    "description": "Pursuing a Bachelor of Science in Computer Science with a specialization in Data Science at TCNJ.",
+    "skillsUsed": ["Data Science",  "GPA 3.98/4.0", "Dean's List"]
   }
 ]

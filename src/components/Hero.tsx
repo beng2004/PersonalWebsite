@@ -20,9 +20,9 @@ const Hero: React.FC = () => {
                         <span className="bg-gradient-to-r from-blue-300 via-slate-500 to-purple-500 bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-normal tracking-tight text-transparent">
                             Software Engineer
                         </span>
-                        <p className="mt-6 sm:mt-8 max-w-2xl mx-auto lg:mx-0 text-lg sm:text-xl md:text-2xl font-light tracking-tight">
-                            {HERO_CONTENT}
-                        </p>
+                            <p className="sm:mt-8 max-w-2xl mx-auto lg:mx-0 text-lg sm:text-xl md:text-2xl text-white/60 tracking-normal">
+                                {HERO_CONTENT}
+                            </p>
                     </div>
                     <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
                         <div className="flex justify-center lg:justify-end">

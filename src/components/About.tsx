@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Timeline from './Timeline';
 import experiences from '../assets/data/experiences.json';
 import pfp from '../assets/pfp.jpg';
@@ -17,12 +17,12 @@ const About: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    // Scroll to description on initial load for mobile devices
-    if (window.innerWidth < 1280 && descriptionRef.current) { // 1280px is the 'xl' breakpoint in Tailwind
-      descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Scroll to description on initial load for mobile devices
+  //   if (window.innerWidth < 1280 && descriptionRef.current) { 
+  //       descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   }
+  // }, []);
 
   return (
     <div className="container mx-auto border-neutral-900 pt-4 pb-24 px-4 lg:px-20">
@@ -55,7 +55,7 @@ const About: React.FC = () => {
           <div className="w-full xl:w-1/2 p-4">
             <Timeline 
               experiences={experiences} 
-              //@ts-expect-error
+              //@ts-expect-error needed
               setSelectedExperience={handleExperienceClick} 
               selectedExperience={selectedExperience} 
             />
