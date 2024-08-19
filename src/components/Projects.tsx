@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { AnimatePresence,motion } from 'framer-motion';
 import PortfolioSplash from '../assets/projects/PortfolioSplash.png'
 import TuneTapSplash from '../assets/projects/TuneTapSplash.png'
 import GoatSplash from '../assets/projects/GoatSplash.png'
 import AutoSenseSplash from '../assets/projects/AutoSenseSplash.jpg';
 import ASLSplash from '../assets/projects/ASLSplashjpg.jpg'
-import {  ParallaxProvider } from 'react-scroll-parallax';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { FaFileAlt, FaGithub } from 'react-icons/fa';
 
+//TODO add email logic
 interface Project {
   id: number;
   title: string;
@@ -28,7 +30,7 @@ const projects: Project[] = [
     },
     {
       id: 3,
-      title: "Fullstack Goat Data Visualizer",
+      title: "Fullstack Data Visualizer",
       description: "A fullstack solution for a Goat Ranch Stakeholder to visualize and analyze their goat data. This project demonstrates strong backend development skills and data visualization techniques.",
       technologies: ["JavaScript", "Express.js", "Node.js", "CSS", "HTML", "postgresSQL", "Chart.js", "RESTful API"],
       imageUrl: GoatSplash,
@@ -38,7 +40,7 @@ const projects: Project[] = [
       id: 4,
       title: "AutoSense",
       description: "A real-time car body type and classification tool. This project showcases computer vision and deep learning techniques for accurate vehicle recognition.",
-      technologies: ["Python", "PyTorch", "OpenCV", "YOLO", "CNN", "Jupyter Notebook", "NumPy", "Pandas", "Matplotlib", "TensorFlow", "Transfer Learning"],
+      technologies: ["Python", "PyTorch", "OpenCV", "YOLOv8", "CNNs", "Jupyter Notebook", "NumPy", "Pandas", "Matplotlib", "TensorFlow", "Transfer Learning"],
       imageUrl: AutoSenseSplash,
       githubUrl: "https://github.com/beng2004/AutoSense"
     },
@@ -53,7 +55,7 @@ const projects: Project[] = [
       id: 5,
       title: "ASL Sign Classifier",
       description: "A real-time American Sign Language (ASL) classification system using advanced machine learning algorithms. This research project at TCNJ demonstrates deep and shallow learning techniques.",
-      technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Linear Regression", "CNN", "Transfer Learning", "Data Preprocessing", "Feature Extraction", "Hyperparameter Tuning", "Cross-validation"],
+      technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Regression", "CNN", "Transfer Learning", "Data Preprocessing", "Feature Extraction",  "Cross-validation"],
       imageUrl: ASLSplash,
       paperUrl: "https://dl.acm.org/doi/10.1145/3626253.3635406"
     },
@@ -68,14 +70,17 @@ const projects: Project[] = [
       id: 7,
       title: "SignWaver",
       description: "An accessibility solution that enables computer control through hand gestures and voice commands. This project demonstrates computer vision, machine learning, and natural language processing skills.",
-      technologies: ["Python", "Google MediaPipe", "Google Cloud Services", "Gemini AI", "Speech Recognition", "Computer Vision", "Natural Language Processing", "Machine Learning", "Voice Command Processing", "Gesture Recognition", "System Integration", "Accessibility Design"],
+      technologies: ["Python", "OpenCV", "NLP", "Gemini AI", "Speech Recognition", "Computer Vision", "Google Cloud Services", "Machine Learning", "Voice Command Processing", "Gesture Recognition","Google MediaPipe", "Accessibility Design"],
       imageUrl: ASLSplash,
       githubUrl: "https://github.com/christopherlam1016/HackTCNJ2024",
     }
   ];
+ 
+  
   
   const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isActive, setIsActive] = useState(false);
+    const [currentSkillIndex, setCurrentSkillIndex] = useState(4); // Start from the 5th skill
   
     const gradients = [
       'bg-gradient-to-br from-purple-700 via-indigo-800 to-blue-900',
@@ -89,69 +94,94 @@ const projects: Project[] = [
   
     const gradient = gradients[index % gradients.length];
   
+    const visibleSkills = project.technologies.slice(0, 3);
+    const hiddenSkills = project.technologies.slice(3);
+  
+    useEffect(() => {
+      let intervalId: NodeJS.Timeout;
+      if (isActive && hiddenSkills.length > 0) {
+        intervalId = setInterval(() => {
+          setCurrentSkillIndex((prevIndex) => 
+            prevIndex >= project.technologies.length - 1 ? 3 : prevIndex + 1
+          );
+        }, 2000); // Change skill every 2 seconds
+      }
+      return () => clearInterval(intervalId);
+    }, [isActive, project.technologies.length, hiddenSkills.length]);
+  
     return (
       <motion.div 
-        className={`relative rounded-lg overflow-hidden shadow-2xl group ${gradient}`}
-        initial={{ opacity: 0, y: 50 }}
+      className={`relative rounded-lg overflow-hidden shadow-lg group flex flex-col justify-between p-4 sm:p-6 ${gradient} `}
+      initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * .1 }}
-        onClick={() => setIsExpanded(!isExpanded)}
         style={{ aspectRatio: '4 / 3' }}
+        onMouseEnter={() => setIsActive(true)}
+        onMouseLeave={() => setIsActive(false)}
+        onClick={() => setIsActive(true)}
       >
         <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
         <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-6 text-white z-10">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2 drop-shadow-lg 
+          <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extrabold mb-2 drop-shadow-lg 
                          bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
             {project.title}
           </h3>
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: isExpanded ? 1 : 0, height: isExpanded ? 'auto' : 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-y-auto custom-scrollbar"
-          >
-            <div className="space-y-3 sm:space-y-4">
-              <p className="text-gray-100 text-sm sm:text-base drop-shadow-md">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="bg-white/20 text-white px-2 py-1 rounded-full text-xs sm:text-sm shadow-md">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex space-x-3">
+          <div className="space-y-3 sm:space-y-4">
+            <p className="text-gray-100 text-sm sm:text-base drop-shadow-md ">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 relative">
+              {visibleSkills.map((tech, index) => (
+                <span key={index} className="bg-white/20 text-white px-2 py-1 rounded-full text-xs sm:text-sm shadow-md">
+                  {tech}
+                </span>
+              ))}
+              {hiddenSkills.length > 0 && (
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={isActive ? currentSkillIndex : 'more'}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-white/20 text-white px-2 py-1 rounded-full text-xs sm:text-sm shadow-md"
+                  >
+                    {isActive ? project.technologies[currentSkillIndex] : `+${hiddenSkills.length} more`}
+                  </motion.span>
+                </AnimatePresence>
+              )}
+            </div>
+            <div className="flex space-x-3">
               {project.githubUrl && (
                 <a 
                   href={project.githubUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-white/10 hover:bg-white/20 text-white px-3 py-1 rounded-full transition-colors duration-300 shadow-md text-md sm:text-base"
+                  className="bg-blue-500 hover:bg-blue-500/20 px-3 py-1 rounded-full transition-colors duration-300 shadow-md text-md sm:text-base flex items-center space-x-2"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  GitHub
+                  <FaGithub />
+                  <span>GitHub</span>
                 </a>
               )}
-                {project.paperUrl && (
-                  <a 
-                    href={project.paperUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-white/10 hover:bg-white/20 text-white px-3 py-1 rounded-full transition-colors duration-300 shadow-md text-sm sm:text-base"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    See Paper
-                  </a>
-                )}
-              </div>
+              {project.paperUrl && (
+                <a 
+                  href={project.paperUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-blue-500 hover:bg-blue-500/20 px-3 py-1 rounded-full transition-colors duration-300 shadow-md text-sm sm:text-base flex items-center space-x-2"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <FaFileAlt />
+                  <span>Paper</span>
+                </a>
+              )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </motion.div>
     );
   };
-  
   const Projects: React.FC = () => {
     return (
       <ParallaxProvider>
@@ -160,7 +190,7 @@ const projects: Project[] = [
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12 sm:mb-16 md:mb-24 text-white">
               Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Projects</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
               {projects.map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}

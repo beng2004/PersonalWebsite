@@ -8,7 +8,7 @@
   },
   {
     "date": "Sept 2023 - Current",
-    "title": "TCNJ",
+    "title": "The College Of New Jersey",
     "subtitle": "Computer Science Peer Mentor",
     "description": "Provided mentorship and guidance to computer science students, teaching foundational and complex programming concepts in Java. Promoted best practices in software development and assisted students with lab exercises, fostering a collaborative learning environment.",
     "skillsUsed": ["Java", "C++", "Teaching", "Mentoring", "Data Structures", "Algorithms"]
@@ -18,20 +18,20 @@
     "title": "BAE Systems",
     "subtitle": "Internship - SWE & Data Analytics",
     "description": "Developed a real-time image detection and classification tool using PyTorch, enabling advanced real time analytics. Designed and implemented Java algorithms to convert defense systems into system-based models. Developed and integrated CAMEO plug-ins for internal use, and researched PDF to CSV conversion techniques using deep learning.",
-    "skillsUsed": ["Java", "Python", "PyTorch", "CAMEO", "Data Analytics", "Model-Based Systems Engineering", "Algorithms"]
+    "skillsUsed": ["Java", "Python", "PyTorch", "CAMEO", "Data Analytics", "Model-Based Systems Engineering", "Groovy", "Pandas", "NumPy", "Transfer Learning", "Data Preprocessing"]
   },
   {
     "date": "Jan 2023 - Current",
-    "title": "TCNJ",
+    "title": "The College Of New Jersey",
     "subtitle": "Research - Machine Learning & Computer Vision",
     "description": "Conducted research in ASL classification using machine learning and computer vision, implementing deep learning algorithms with PyTorch and Google MediaPipe. Published research findings at ACM’s SIGCSE Technical Symposium and presented them to over 1000 attendees. Currently focused on classifying dynamic ASL signs and collecting large-scale data.",
-    "skillsUsed": ["Python", "PyTorch", "OpenCV", "TensorFlow", "Machine Learning", "Computer Vision", "Research"]
+    "skillsUsed": ["Python", "PyTorch", "OpenCV", "TensorFlow", "Machine Learning", "Computer Vision", "Research", "Google Media Pipe"]
   },
   {
     "date": "Sept 2022 - Current",
-    "title": "The College of New Jersey (TCNJ)",
+    "title": "The College Of New Jersey",
     "subtitle": "B.S. Computer Science - Specialization in Data Science",
     "description": "Pursuing a Bachelor of Science in Computer Science with a specialization in Data Science at TCNJ.",
-    "skillsUsed": ["Data Science",  "GPA 3.98/4.0", "Dean's List"]
+    "skillsUsed": ["Data Science",  "Algorithms", "Data Structures", "AI", "Databases", "Computer Architecture", "OOP"]
   }
 ]
