@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex flex-grow justify-center">
-                <div className="text-lg flex space-x-20">
+                <div className="text-lg flex xl:space-x-20 space-x-10">
                     {navItems.map((item) => (
                         <Link
                             key={item.path}
