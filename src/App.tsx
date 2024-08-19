@@ -16,10 +16,10 @@ const App = () => {
         <div className="container mx-auto px-2">
           <Navbar/>
           <Routes>
-            <Route path="/" element={<Hero />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={< Contact/>} />
+            <Route path="/PersonalWebsite/" element={<Hero />} />
+            <Route path="/PersonalWebsite/about" element={<About />} />
+            <Route path="/PersonalWebsite/projects" element={<Projects />} />
+            <Route path="/PersonalWebsite/contact" element={< Contact/>} />
           </Routes>
         </div>
       </div>

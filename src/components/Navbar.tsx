@@ -13,10 +13,10 @@ const Navbar: React.FC = () => {
     }, [location]);
 
     const navItems = [
-        { path: '/', label: 'Home' },
-        { path: '/about', label: 'About Me' },
-        { path: '/projects', label: 'Projects' },
-        { path: '/contact', label: 'Contact' },
+        { path: '/PersonalWebsite/', label: 'Home' },
+        { path: '/PersonalWebsite/about', label: 'About Me' },
+        { path: '/PersonalWebsite/projects', label: 'Projects' },
+        { path: '/PersonalWebsite/contact', label: 'Contact' },
     ];
 
     const toggleMobileMenu = () => {
@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="flex items-center justify-between pt-8 px-4 md:px-12">
             <div className="logo flex flex-shrink-0 items-center">
-                <Link to={'/'}>
+                <Link to={'/PersonalWebsite/'}>
                     <img className="mx-2 w-16 antialiased" src={logo} alt="logo"/>
                 </Link>
             </div>
