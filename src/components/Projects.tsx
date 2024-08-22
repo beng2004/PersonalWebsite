@@ -8,7 +8,6 @@ import ASLSplash from '../assets/projects/ASLSplashjpg.jpg'
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { FaFileAlt, FaGithub } from 'react-icons/fa';
 
-//TODO add email logic
 interface Project {
   id: number;
   title: string;
