@@ -32,7 +32,7 @@ const projects: Project[] = [
       id: 3,
       title: "Fullstack Data Visualizer",
       description: "A fullstack solution for a Goat Ranch Stakeholder to visualize and analyze their goat data. This project demonstrates strong backend development skills and data visualization techniques.",
-      technologies: ["JavaScript", "Express.js", "Node.js", "CSS", "HTML", "postgresSQL", "Chart.js", "RESTful API"],
+      technologies: ["JavaScript", "Express.js", "Node.js", "CSS", "HTML", "postgresSQL", "Chart.js", "APIs"],
       imageUrl: GoatSplash,
       githubUrl: "https://github.com/beng2004/FullStackDatabaseWebsite"
     },
@@ -40,7 +40,7 @@ const projects: Project[] = [
       id: 4,
       title: "AutoSense",
       description: "A real-time car body type and classification tool. This project showcases computer vision and deep learning techniques for accurate vehicle recognition.",
-      technologies: ["Python", "PyTorch", "OpenCV", "YOLOv8", "CNNs", "Jupyter Notebook", "NumPy", "Pandas", "Matplotlib", "TensorFlow", "Transfer Learning"],
+      technologies: ["Python", "PyTorch", "OpenCV", "YOLOv8", "CNNs", "Jupyter", "NumPy", "Pandas", "Matplotlib", "TensorFlow", "Transfer Learning"],
       imageUrl: AutoSenseSplash,
       githubUrl: "https://github.com/beng2004/AutoSense"
     },
@@ -48,14 +48,14 @@ const projects: Project[] = [
       id: 2,
       title: "TuneTap",
       description: "An innovative mobile app that aims to connect people through music. TuneTap allows users to discover shared musical interests by simply tapping phones, creating a unique social experience.",
-      technologies: ["React Native", "TypeScript", "Spotify API", "OAuth 2.0", "NFC Technology", "Jest", "Axios"],
+      technologies: ["React Native", "TypeScript", "Spotify API", "OAuth 2.0", "NFC", "Jest", "Axios"],
       imageUrl: TuneTapSplash,
     },
     {
       id: 5,
       title: "ASL Sign Classifier",
       description: "A real-time American Sign Language (ASL) classification system using advanced machine learning algorithms. This research project at TCNJ demonstrates deep and shallow learning techniques.",
-      technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Regression", "CNN", "Transfer Learning", "Data Preprocessing", "Feature Extraction",  "Cross-validation"],
+      technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Regression", "CNNs", "RNNs"],
       imageUrl: ASLSplash,
       paperUrl: "https://dl.acm.org/doi/10.1145/3626253.3635406"
     },
@@ -63,14 +63,14 @@ const projects: Project[] = [
       id: 6,
       title: "Slide Generator",
       description: "An AI-powered presentation creator that automates slide generation using natural language processing and image recognition. This hackathon project showcases integration of multiple APIs and efficient data processing.",
-      technologies: ["Python", "Flask", "GPT-3.5", "Google Cloud Vision API", "HTML", "JavaScript", "JSON", "Selenium Web Scraping", "Natural Language Processing", "RESTful API"],
+      technologies: ["Python", "Flask", "GPT-3.5", "Google Cloud Vision API", "HTML", "JavaScript", "JSON", "Selenium", "NLP", "APIs"],
       imageUrl: ASLSplash,
     },
     {
       id: 7,
       title: "SignWaver",
       description: "An accessibility solution that enables computer control through hand gestures and voice commands. This project demonstrates computer vision, machine learning, and natural language processing skills.",
-      technologies: ["Python", "OpenCV", "NLP", "Gemini AI", "Speech Recognition", "Computer Vision", "Google Cloud Services", "Machine Learning", "Voice Command Processing", "Gesture Recognition","Google MediaPipe", "Accessibility Design"],
+      technologies: ["Python", "OpenCV", "NLP", "Gemini AI", "Speech Recognition", "Google Cloud", "ML"],
       imageUrl: ASLSplash,
       githubUrl: "https://github.com/christopherlam1016/HackTCNJ2024",
     }
