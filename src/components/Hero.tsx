@@ -1,12 +1,20 @@
 import { HERO_CONTENT } from "../constants"
 import profilePic from "../assets/hero6.png"
+import resumePdf from "../assets/data/benguerrieriresume2026.pdf"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 const Hero: React.FC = () => {
+    const scrollToResume = () => {
+        const section = document.getElementById('resume-preview');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
     <motion.div 
-        className="pb-12 pt-4 md:pt-8"
+        className="pb-20 pt-4 md:pt-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -58,7 +66,44 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="relative mt-10 flex justify-center">
+                <button
+                    onClick={scrollToResume}
+                    className="inline-flex items-center gap-2 rounded-full border border-cyan-300/35 bg-cyan-400/10 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
+                >
+                    View My Resume
+                    <span className="text-lg leading-none">↓</span>
+                </button>
+            </div>
         </div>
+
+        <section id="resume-preview" className="mt-10 glass-card p-6 sm:p-8 md:p-10">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <div>
+                    <p className="text-sm uppercase tracking-[0.2em] text-cyan-200/80">Resume Preview</p>
+                    <h2 className="mt-2 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
+                        Benjamin Guerrieri
+                    </h2>
+                    <p className="mt-2 text-white/70">B.S. Computer Science (Data Science) • The College of New Jersey • GPA 3.9</p>
+                </div>
+                <a
+                    href={resumePdf}
+                    download
+                    className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
+                >
+                    Download Resume
+                </a>
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+                <iframe
+                    src={resumePdf}
+                    title="Benjamin Guerrieri Resume Preview"
+                    className="h-[640px] w-full"
+                />
+            </div>
+        </section>
         </motion.div>
     )
 }
