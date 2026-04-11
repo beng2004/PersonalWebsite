@@ -1,6 +1,6 @@
 
 
-export const HERO_CONTENT = `I am Benjamin Guerrieri, currently pursuing a degree in Computer Science at The College of New Jersey. My experiences have helped me develop a diverse skill set, from AI and machine learning to developing fullstack web applications with technologies like React, Node.js, and JavaScript. I am passionate about using technology to innovate and solve complex challenges, whether in AI engineering, full-stack development, or beyond. My goal is to contribute meaningfully to the tech industry while continuously learning.`;
+export const HERO_CONTENT = `I build production-ready software across full-stack engineering, AI systems, and data science. From enterprise authentication infrastructure to agentic AI workflows and computer vision research, I focus on shipping solutions that are fast, secure, and genuinely useful.`;
 
 export const EXPERIENCES = [
   {

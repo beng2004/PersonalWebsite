@@ -5,5 +5,41 @@
 @tailwind utilities;
 
 :root {
-    font-family: "Inter" sans-serif;
+    font-family: "Inter", sans-serif;
+    color-scheme: dark;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+body {
+    @apply bg-neutral-950 text-neutral-200 antialiased;
+    margin: 0;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.5) rgba(255, 255, 255, 0.08);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(96, 165, 250, 0.6), rgba(168, 85, 247, 0.7));
+    border-radius: 9999px;
+}
+
+@layer components {
+    .glass-card {
+        @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+    }
 }

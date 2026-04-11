@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence,motion } from 'framer-motion';
 import PortfolioSplash from '../assets/projects/PortfolioSplash.png'
-import TuneTapSplash from '../assets/projects/TuneTapSplash.png'
 import GoatSplash from '../assets/projects/GoatSplash.png'
 import AutoSenseSplash from '../assets/projects/AutoSenseSplash.jpg';
 import ASLSplash from '../assets/projects/ASLSplashjpg.jpg'
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { FaFileAlt, FaGithub } from 'react-icons/fa';
+import { FaFileAlt, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 interface Project {
   id: number;
@@ -15,10 +14,46 @@ interface Project {
   technologies: string[];
   imageUrl: string;
   githubUrl?: string;
+  devpostUrl?: string;
   paperUrl?: string;
 }
 
 const projects: Project[] = [
+    {
+      id: 8,
+      title: "HackTCNJ 2026 - Infini-Dungeon",
+      description: "A procedurally generated dungeon crawler where players battle AI-voiced enemies using word-based combat. Built for HackTCNJ 2026 with dynamic narration, generated content, and replayable runs.",
+      technologies: ["React 19", "TypeScript", "Vite", "Google Gemini", "ElevenLabs TTS", "HTML5 Canvas", "Web Audio API", "Prompt Engineering", "Game Logic"],
+      imageUrl: ASLSplash,
+      githubUrl: "https://github.com/christopherlam1016/HackTCNJ2026",
+      devpostUrl: "https://devpost.com/software/infini-dungeon",
+    },
+    {
+      id: 5,
+      title: "ASL Sign Classifier",
+      description: "A real-time American Sign Language (ASL) classification system using advanced machine learning algorithms. This research project at TCNJ demonstrates deep and shallow learning techniques.",
+      technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Regression", "CNNs", "RNNs"],
+      imageUrl: ASLSplash,
+      paperUrl: "https://dl.acm.org/doi/10.1145/3626253.3635406"
+    },
+    {
+      id: 6,
+      title: "HackTCNJ 2025 - Collaborative Board",
+      description: "A collaborative notes and bulletin-board app designed for real-time student productivity, featuring OAuth sign-in, board/post workflows, file uploads, and AI-powered summarization.",
+      technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "OAuth", "OpenAI API", "REST APIs"],
+      imageUrl: ASLSplash,
+      githubUrl: "https://github.com/beng2004/HackTCNJ-2025",
+      devpostUrl: "https://devpost.com/software/post-it-4uhvwy",
+    },
+    {
+      id: 7,
+      title: "HackTCNJ 2024 - SignWaver",
+      description: "An accessibility solution that enables computer control through hand gestures and voice commands. This project demonstrates computer vision, machine learning, and natural language processing skills.",
+      technologies: ["Python", "OpenCV", "NLP", "Gemini AI", "Speech Recognition", "Google Cloud", "ML"],
+      imageUrl: ASLSplash,
+      githubUrl: "https://github.com/christopherlam1016/HackTCNJ2024",
+      devpostUrl: "https://devpost.com/software/signwaver",
+    },
     {
       id: 1,
       title: "Portfolio Website",
@@ -44,34 +79,12 @@ const projects: Project[] = [
       githubUrl: "https://github.com/beng2004/AutoSense"
     },
     {
-      id: 2,
-      title: "TuneTap",
-      description: "An innovative mobile app that aims to connect people through music. TuneTap allows users to discover shared musical interests by simply tapping phones, creating a unique social experience.",
-      technologies: ["React Native", "TypeScript", "Spotify API", "OAuth 2.0", "NFC", "Jest", "Axios"],
-      imageUrl: TuneTapSplash,
-    },
-    {
       id: 5,
       title: "ASL Sign Classifier",
       description: "A real-time American Sign Language (ASL) classification system using advanced machine learning algorithms. This research project at TCNJ demonstrates deep and shallow learning techniques.",
       technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Regression", "CNNs", "RNNs"],
       imageUrl: ASLSplash,
       paperUrl: "https://dl.acm.org/doi/10.1145/3626253.3635406"
-    },
-    {
-      id: 6,
-      title: "Slide Generator",
-      description: "An AI-powered presentation creator that automates slide generation using natural language processing and image recognition. This hackathon project showcases integration of multiple APIs and efficient data processing.",
-      technologies: ["Python", "Flask", "GPT-3.5", "Google Cloud Vision API", "HTML", "JavaScript", "JSON", "Selenium", "NLP", "APIs"],
-      imageUrl: ASLSplash,
-    },
-    {
-      id: 7,
-      title: "SignWaver",
-      description: "An accessibility solution that enables computer control through hand gestures and voice commands. This project demonstrates computer vision, machine learning, and natural language processing skills.",
-      technologies: ["Python", "OpenCV", "NLP", "Gemini AI", "Speech Recognition", "Google Cloud", "ML"],
-      imageUrl: ASLSplash,
-      githubUrl: "https://github.com/christopherlam1016/HackTCNJ2024",
     }
   ];
  
@@ -80,18 +93,6 @@ const projects: Project[] = [
   const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
     const [isActive, setIsActive] = useState(false);
     const [currentSkillIndex, setCurrentSkillIndex] = useState(4); // Start from the 5th skill
-  
-    const gradients = [
-      'bg-gradient-to-br from-purple-700 via-indigo-800 to-blue-900',
-      'bg-gradient-to-br from-cyan-700 via-teal-800 to-green-900',
-      'bg-gradient-to-br from-rose-700 via-pink-800 to-purple-900',
-      'bg-gradient-to-br from-amber-700 via-orange-800 to-red-900',
-      'bg-gradient-to-br from-emerald-700 via-green-800 to-teal-900',
-      'bg-gradient-to-br from-fuchsia-700 via-purple-800 to-indigo-900',
-      'bg-gradient-to-br from-sky-700 via-blue-800 to-indigo-900',
-    ];
-  
-    const gradient = gradients[index % gradients.length];
   
     const visibleSkills = project.technologies.slice(0, 3);
     const hiddenSkills = project.technologies.slice(3);
@@ -110,72 +111,92 @@ const projects: Project[] = [
   
     return (
       <motion.div 
-      className={`relative rounded-lg overflow-hidden shadow-lg group flex flex-col justify-between p-4 sm:p-6 ${gradient} `}
+      className="group relative flex min-h-[27rem] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900/95 via-slate-900/85 to-indigo-950/75 p-5 shadow-xl shadow-black/35 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200/30 hover:shadow-[0_20px_40px_rgba(56,189,248,0.14)] sm:p-6"
       initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * .1 }}
-        style={{ aspectRatio: '4 / 3' }}
+        transition={{ duration: 0.45, delay: index * .07 }}
         onMouseEnter={() => setIsActive(true)}
         onMouseLeave={() => setIsActive(false)}
         onClick={() => setIsActive(true)}
       >
-        <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
-        <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-6 text-white z-10">
-          <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-extrabold mb-2 drop-shadow-lg 
-                         bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-purple-500/10 blur-3xl" />
+        <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-cyan-300 via-sky-300 to-purple-400" />
+
+        <div className="relative z-10 flex h-full flex-col text-white">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200/75">Project {String(index + 1).padStart(2, '0')}</p>
+          <h3 className="mb-3 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-2xl font-extrabold text-transparent md:text-3xl">
             {project.title}
           </h3>
-          <div className="space-y-3 sm:space-y-4">
-            <p className="text-gray-100 text-sm sm:text-base drop-shadow-md ">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 relative">
-              {visibleSkills.map((tech, index) => (
-                <span key={index} className="bg-white/20 text-white px-2 py-1 rounded-full text-xs sm:text-sm shadow-md">
-                  {tech}
-                </span>
-              ))}
-              {hiddenSkills.length > 0 && (
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={isActive ? currentSkillIndex : 'more'}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="bg-white/20 text-white px-2 py-1 rounded-full text-xs sm:text-sm shadow-md"
-                  >
-                    {isActive ? project.technologies[currentSkillIndex] : `+${hiddenSkills.length} more`}
-                  </motion.span>
-                </AnimatePresence>
-              )}
-            </div>
-            <div className="flex space-x-3">
-              {project.githubUrl && (
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-500/20 px-3 py-1 rounded-full transition-colors duration-300 shadow-md text-md sm:text-base flex items-center space-x-2"
-                  onClick={(e) => e.stopPropagation()}
+
+          <p className="text-sm text-white/90 sm:text-base">
+            {project.description}
+          </p>
+
+          <div className="relative mt-4 flex flex-wrap gap-2">
+            {visibleSkills.map((tech, index) => (
+              <span key={index} className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-xs text-white/95 sm:text-sm">
+                {tech}
+              </span>
+            ))}
+            {hiddenSkills.length > 0 && (
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={isActive ? currentSkillIndex : 'more'}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-full border border-cyan-200/35 bg-cyan-300/15 px-2.5 py-1 text-xs text-cyan-100 sm:text-sm"
                 >
-                  <FaGithub />
-                  <span>GitHub</span>
-                </a>
-              )}
-              {project.paperUrl && (
-                <a 
-                  href={project.paperUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-500/20 px-3 py-1 rounded-full transition-colors duration-300 shadow-md text-sm sm:text-base flex items-center space-x-2"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <FaFileAlt />
-                  <span>Paper</span>
-                </a>
-              )}
-            </div>
+                  {isActive ? project.technologies[currentSkillIndex] : `+${hiddenSkills.length} more`}
+                </motion.span>
+              </AnimatePresence>
+            )}
+          </div>
+
+          <div className="mt-auto flex flex-wrap gap-2 pt-5">
+            {project.githubUrl && (
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 rounded-full border border-cyan-300/45 bg-cyan-400/20 px-3 py-1 text-xs font-medium text-cyan-100 transition hover:bg-cyan-300/30 sm:text-sm"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <FaGithub />
+                <span>GitHub</span>
+              </a>
+            )}
+            {project.paperUrl && (
+              <a 
+                href={project.paperUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 rounded-full border border-purple-300/40 bg-purple-400/20 px-3 py-1 text-xs font-medium text-purple-100 transition hover:bg-purple-300/30 sm:text-sm"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <FaFileAlt />
+                <span>Paper</span>
+              </a>
+            )}
+            {project.devpostUrl && (
+              <a 
+                href={project.devpostUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 rounded-full border border-amber-300/45 bg-amber-400/20 px-3 py-1 text-xs font-medium text-amber-100 transition hover:bg-amber-300/30 sm:text-sm"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <FaExternalLinkAlt />
+                <span>Devpost</span>
+              </a>
+            )}
+            {!project.githubUrl && !project.paperUrl && !project.devpostUrl && (
+              <span className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white/80 sm:text-sm">
+                Link coming soon
+              </span>
+            )}
           </div>
         </div>
       </motion.div>
@@ -184,12 +205,16 @@ const projects: Project[] = [
   const Projects: React.FC = () => {
     return (
       <ParallaxProvider>
-        <div className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8">
-          <div className="container mx-auto">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12 sm:mb-16 md:mb-24 text-white">
-              Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Projects</span>
+        <div className="pb-24 pt-4">
+          <div className="glass-card p-6 sm:p-8 md:p-10">
+            <h2 className="mb-4 text-center text-4xl font-black text-white sm:text-5xl md:text-6xl">
+              Featured <span className="bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">Projects</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
+            <p className="mx-auto mb-12 max-w-3xl text-center text-white/70">
+              Production-minded full-stack, AI, and applied ML builds spanning enterprise systems, accessibility tools, and research-backed products.
+            </p>
+
+            <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 xl:grid-cols-3">
               {projects.map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}

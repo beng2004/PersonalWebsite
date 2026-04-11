@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaSchool, FaBars, FaTimes } from "react-icons/fa"
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-    const [currentPage, setCurrentPage] = useState('/');
+    const [currentPage, setCurrentPage] = useState('/PersonalWebsite/');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
 
@@ -24,83 +24,81 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="flex items-center justify-between pt-8 px-4 md:px-12">
-            <div className="logo flex flex-shrink-0 items-center">
+        <nav className="sticky top-4 z-50 mb-10 mt-5">
+            <div className="glass-card flex items-center justify-between px-4 py-3 md:px-6 md:py-4 shadow-[0_0_30px_rgba(139,92,246,0.18)]">
                 <Link to={'/PersonalWebsite/'}>
-                    <img className="mx-2 w-16 antialiased" src={logo} alt="logo"/>
+                    <img className="w-12 md:w-14 antialiased" src={logo} alt="logo"/>
                 </Link>
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex flex-grow justify-center">
-                <div className="text-lg flex xl:space-x-20 space-x-10">
+
+                <div className="hidden md:flex flex-grow justify-center">
+                    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-2 py-1">
                     {navItems.map((item) => (
                         <Link
                             key={item.path}
                             to={item.path}
-                            className={`transition duration-300 ${
+                            className={`rounded-full px-4 py-2 text-sm font-medium transition duration-300 ${
                                 currentPage === item.path
-                                    ? 'text-purple-500 font-semibold text-2xl'
-                                    : 'hover:text-purple-500 opacity-70 text-xl'
+                                    ? 'bg-white/15 text-white'
+                                    : 'text-white/70 hover:bg-white/10 hover:text-white'
                             }`}
                         >
                             {item.label}
                         </Link>
                     ))}
+                    </div>
+                </div>
+
+                <div className="hidden md:flex items-center justify-center gap-4 text-2xl text-white/80">
+                <a href="https://www.linkedin.com/in/benjaminguerrieri/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="icon-glow cursor-pointer hover:text-cyan-300"/>
+                </a>
+                <a href="https://www.github.com/beng2004" target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="icon-glow cursor-pointer hover:text-purple-300"/>
+                </a>
+                <a href="https://www.tcnj.edu" target="_blank" rel="noopener noreferrer">
+                    <FaSchool className="icon-glow cursor-pointer hover:text-blue-300"/>
+                </a>
+                </div>
+
+                <div className="md:hidden">
+                    <button onClick={toggleMobileMenu} className="text-3xl text-white/80 hover:text-white" aria-label="Toggle menu">
+                        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
                 </div>
             </div>
             
-            {/* Desktop Social Icons */}
-            <div className="hidden md:flex items-center justify-center gap-4 text-3xl">
-                <a href="https://www.linkedin.com/in/benjaminguerrieri/" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                </a>
-                <a href="https://www.github.com/beng2004" target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                </a>
-                <a href="https://www.tcnj.edu" target="_blank" rel="noopener noreferrer">
-                    <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
-                </a>
-            </div>
-            
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-                <button onClick={toggleMobileMenu} className="text-3xl">
-                    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-                </button>
-            </div>
-            
-            {/* Mobile Sidebar */}
-            <div className={`fixed top-0 right-0 h-full w-64 bg-slate-700 shadow-lg transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden`}>
-                <div className="flex justify-end p-4">
-                    <button onClick={toggleMobileMenu} className="text-3xl">
+            <div className={`fixed right-0 top-0 z-50 h-full w-72 border-l border-white/10 bg-neutral-950/95 p-6 backdrop-blur-xl transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden`}>
+                <div className="flex justify-between items-center">
+                    <p className="text-lg font-semibold text-white/80">Navigate</p>
+                    <button onClick={toggleMobileMenu} className="text-3xl text-white/80 hover:text-white" aria-label="Close menu">
                         <FaTimes />
                     </button>
                 </div>
-                <div className="flex flex-col items-center space-y-8 mt-8">
+
+                <div className="mt-10 flex flex-col space-y-4">
                     {navItems.map((item) => (
                         <Link
                             key={item.path}
                             to={item.path}
                             onClick={toggleMobileMenu}
-                            className={`transition duration-300 ${
+                            className={`rounded-xl px-4 py-3 text-lg transition duration-300 ${
                                 currentPage === item.path
-                                    ? 'text-purple-500 font-semibold text-2xl'
-                                    : 'hover:text-purple-500 opacity-40 text-xl'
+                                    ? 'bg-white/10 text-white'
+                                    : 'text-white/70 hover:bg-white/10 hover:text-white'
                             }`}
                         >
                             {item.label}
                         </Link>
                     ))}
-                    <div className="flex space-x-4 text-3xl mt-8">
+                    <div className="mt-6 flex space-x-4 text-3xl text-white/80">
                         <a href="https://www.linkedin.com/in/benjaminguerrieri/" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                            <FaLinkedin className="icon-glow cursor-pointer hover:text-cyan-300"/>
                         </a>
                         <a href="https://www.github.com/beng2004" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                            <FaGithub className="icon-glow cursor-pointer hover:text-purple-300"/>
                         </a>
                         <a href="https://www.tcnj.edu" target="_blank" rel="noopener noreferrer">
-                            <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                            <FaSchool className="icon-glow cursor-pointer hover:text-blue-300"/>
                         </a>
                     </div>
                 </div>

@@ -51,63 +51,67 @@ const Contact: React.FC = () => {
   
     return (
         <motion.div 
-            className="container mx-auto py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8"
+            className="pb-24 pt-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
         >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12 sm:mb-16 md:mb-24 text-white">
-                Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Touch</span>
-            </h2>
-            
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+            <div className="glass-card p-6 sm:p-8 md:p-10">
+                <h2 className="mb-4 text-center text-4xl font-black text-white sm:text-5xl md:text-6xl">
+                    Get in <span className="bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">Touch</span>
+                </h2>
+                <p className="mx-auto mb-10 max-w-2xl text-center text-white/70">
+                    Open to software engineering, AI engineering, and data science opportunities. Send a note and I’ll get back as soon as possible.
+                </p>
+
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
                 <motion.div 
-                    className="w-full lg:w-1/2"
+                    className="w-full lg:w-3/5 rounded-2xl border border-white/10 bg-black/20 p-5 sm:p-6"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.15 }}
                 >
                     <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                            <label htmlFor="name" className="mb-1 block text-sm font-medium text-white/80">Name</label>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-purple-500 transition-colors duration-300"
+                                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-purple-400 focus:outline-none transition-colors duration-300"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <label htmlFor="email" className="mb-1 block text-sm font-medium text-white/80">Email</label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-purple-500 transition-colors duration-300"
+                                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-purple-400 focus:outline-none transition-colors duration-300"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                            <label htmlFor="message" className="mb-1 block text-sm font-medium text-white/80">Message</label>
                             <textarea
                                 id="message"
                                 name="message"
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                rows={4}
-                                className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-purple-500 transition-colors duration-300 resize-none"
+                                rows={5}
+                                className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-purple-400 focus:outline-none transition-colors duration-300"
                                 required
                             ></textarea>
                         </div>
                         <input type="hidden" name="full_message" />
                         <motion.button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
+                            className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 px-4 py-3 font-bold text-white transition-all duration-300 hover:brightness-110"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             disabled={isSubmitting}
@@ -124,29 +128,30 @@ const Contact: React.FC = () => {
                 </motion.div>
 
                 <motion.div 
-                    className="w-full lg:w-1/2 flex flex-col justify-center items-center space-y-8"
+                    className="w-full lg:w-2/5 flex flex-col justify-center rounded-2xl border border-white/10 bg-black/20 p-6 text-center"
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    transition={{ duration: 0.5, delay: 0.25 }}
                 >
-                    <h3 className="text-3xl sm:text-xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-300 via-slate-500 to-purple-500 bg-clip-text text-transparent">
+                    <h3 className="mb-4 bg-gradient-to-r from-cyan-300 via-white to-purple-400 bg-clip-text text-4xl font-extrabold text-transparent md:text-5xl">
                         Let's Connect
                     </h3>
-                    <p className="text-gray-300 text-2xl mb-6 max-w-md sm:justify-center text-center">
+                    <p className="mb-6 max-w-md text-lg text-white/75 md:text-xl">
                         Feel free to reach out for collaborations, opportunities, or just to say hello. I'm always excited to connect with fellow developers and tech enthusiasts!
                     </p>
-                    <div className="visible xl:invisible flex space-x-6 text-4xl">
+                    <div className="flex space-x-6 text-4xl text-white/85">
                         <a href="https://www.linkedin.com/in/benjaminguerrieri/" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                            <FaLinkedin className="icon-glow cursor-pointer hover:text-cyan-300"/>
                         </a>
                         <a href="https://www.github.com/beng2004" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                            <FaGithub className="icon-glow cursor-pointer hover:text-purple-300"/>
                         </a>
                         <a href="https://www.tcnj.edu" target="_blank" rel="noopener noreferrer">
-                            <FaSchool className="fa cursor-pointer hover:text-purple-500 transition duration-300"/>
+                            <FaSchool className="icon-glow cursor-pointer hover:text-blue-300"/>
                         </a>
                     </div>
                 </motion.div>
+            </div>
             </div>
         </motion.div>
     );
