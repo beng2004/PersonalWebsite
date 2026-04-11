@@ -1,37 +1,44 @@
 [
   {
+    "date": "June 2025 - Aug 2025",
+    "title": "Prudential Financial",
+    "subtitle": "Data Science Intern",
+    "description": "Developed agentic AI workflows using LangGraph to forecast business metrics on Prudential-specific datasets. Integrated predictive models into a company chatbot, enabling self-service analytics for business analysts across teams.",
+    "skillsUsed": ["Python", "LangGraph", "Predictive Modeling", "AI Workflows", "Data Science", "Enterprise Chatbots"]
+  },
+  {
+    "date": "May 2025 - Aug 2025",
+    "title": "ArmsVision",
+    "subtitle": "Data Scientist Contractor",
+    "description": "Developed a chatbot for insureds, agents, and clients using a RAG architecture with vector search in MongoDB. Built an image risk analysis tool for underwriting using fine-tuned vision-language models, reducing manual review time for underwriters.",
+    "skillsUsed": ["Python", "RAG", "MongoDB", "Vector Search", "LLMs", "VLMs", "LangChain", "Data Science"]
+  },
+  {
     "date": "June 2024 - Aug 2024",
     "title": "Prudential Financial",
-    "subtitle": "Internship - Software Engineering",
-    "description": "Helped with the development and deployment of API security libraries for enterprise-wide use, utilizing Node.js and React to implement OAuth 2.0 workflows. Architected a TypeScript and Node.js library for API role management, now a core component in company-wide templates. Engineered Backend-for-Frontend (BFF) services to optimize data flow between front-end and back-end systems, enhancing performance. Developed a vault secrets management and token verification library for internal authentication, bolstering security.",
-    "skillsUsed": ["JavaScript", "TypeScript", "Node.js", "React", "Koa", "Tailwind CSS", "OAuth 2.0 Workflows", "API Security", "Backend-for-Frontend (BFF)", "Microservices", "API Integration"]
+    "subtitle": "Software Engineering Intern",
+    "description": "Developed an API role-management library implementing OAuth 2.0 client-credentials flow for secure authentication middleware. Built a Backend-for-Frontend service to optimize data flow and secure vault-based secret management. Collaborated on standardized authentication templates for React applications across development teams.",
+    "skillsUsed": ["TypeScript", "Node.js", "React", "OAuth 2.0", "API Security", "Backend-for-Frontend", "Microservices", "REST APIs"]
   },
   {
-    "date": "Sept 2023 - Current",
-    "title": "The College Of New Jersey",
-    "subtitle": "Computer Science Peer Mentor",
-    "description": "Provided mentorship and guidance to computer science students, teaching foundational and complex programming concepts in Java. Promoted best practices in software development and assisted students with lab exercises, fostering a collaborative learning environment.",
-    "skillsUsed": ["Java", "C++", "Teaching", "Mentoring", "Data Structures", "Algorithms"]
-  },
-  {
-    "date": "May 2023 - Jan 2024",
+    "date": "May 2023 - Aug 2023, Dec 2023 - Jan 2024",
     "title": "BAE Systems",
-    "subtitle": "Internship - SWE & Data Analytics",
-    "description": "Developed a real-time image detection and classification tool using PyTorch, enabling advanced real time analytics. Designed and implemented Java algorithms to convert defense systems into system-based models. Developed and integrated CAMEO plug-ins for internal use, and researched PDF to CSV conversion techniques using deep learning.",
-    "skillsUsed": ["Java", "Python", "PyTorch", "CAMEO", "Data Analytics", "Model-Based Systems Engineering", "Groovy", "Pandas", "NumPy", "Transfer Learning", "Data Preprocessing"]
+    "subtitle": "SWE & Data Analytics Intern",
+    "description": "Engineered a real-time data pipeline using PyTorch and YOLOv8 for automated vehicle classification. Developed Java CAMEO plug-ins to automate model requirements documentation for systems engineering workflows. Built an OCR document-processing tool using BFS algorithms and transformers to support PDF-to-CSV conversion.",
+    "skillsUsed": ["Python", "Java", "PyTorch", "YOLOv8", "OCR", "Transformers", "CAMEO", "Data Pipelines"]
   },
   {
-    "date": "Jan 2023 - Current",
-    "title": "The College Of New Jersey",
-    "subtitle": "Research - Machine Learning & Computer Vision",
-    "description": "Conducted research in ASL classification using machine learning and computer vision, implementing deep learning algorithms with PyTorch and Google MediaPipe. Published research findings at ACM’s SIGCSE Technical Symposium and presented them to over 1000 attendees. Currently focused on classifying dynamic ASL signs and collecting large-scale data.",
-    "skillsUsed": ["Python", "PyTorch", "OpenCV", "TensorFlow", "Machine Learning", "Computer Vision", "Research", "Google Media Pipe"]
+    "date": "Jan 2023 - Present",
+    "title": "The College of New Jersey",
+    "subtitle": "Researcher - Machine Learning & Computer Vision",
+    "description": "Researching American Sign Language classification using machine learning and computer vision techniques. Developed preprocessing pipelines for ASL gesture normalization to support continuous data collection and model training. Evaluated classification algorithms and published findings at ACM SIGCSE and ISVC.",
+    "skillsUsed": ["Python", "Machine Learning", "Computer Vision", "OpenCV", "PyTorch", "TensorFlow", "Research"]
   },
   {
-    "date": "Sept 2022 - Current",
-    "title": "The College Of New Jersey",
-    "subtitle": "B.S. Computer Science - Specialization in Data Science",
-    "description": "Pursuing a Bachelor of Science in Computer Science with a specialization in Data Science at TCNJ.",
-    "skillsUsed": ["Data Science",  "Algorithms", "Data Structures", "AI", "Databases", "Computer Architecture", "OOP"]
+    "date": "Sept 2022 - Jan 2026",
+    "title": "The College of New Jersey",
+    "subtitle": "B.S. Computer Science (Data Science Specialization)",
+    "description": "Bachelor of Science in Computer Science with a specialization in Data Science. GPA: 3.9/4.0. Dean's List from 2022 to present.",
+    "skillsUsed": ["Data Science", "Algorithms", "Data Structures", "SQL", "Software Engineering", "Statistics"]
   }
 ]
